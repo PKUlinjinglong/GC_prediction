@@ -30,7 +30,7 @@ python main.py
 
 ## 使用说明
 
-1. 在 `predict_mole_smi` 列表中输入你所感兴趣的化学分子的 SMILES 结构：
+1. 在 `predict_mole_smi` 列表中输入你所感兴趣的化学分子的 SMILES 字符串（可自行由ChemDraw导出）：
 
     ```python
     predict_mole_smi = ['CCCCCCC', 'CCCCCCCCCCCC', 'CCCCCCCCCCCCCCCCCCC']
