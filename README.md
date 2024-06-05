@@ -1,56 +1,56 @@
 
-# 多模态模型 README
+# Multimodal Model README
 
-这是一个多模态模型，用于预测分子在各种升温曲线下的保留时间。
+This is a multimodal model for predicting the retention time of molecules under various temperature ramping curves.
 
-## 环境设置
+## Environment Setup
 
-需要满足的环境包括：
-- **PyTorch 版本**：2.3.0+cu121
-- **torch_geometric 版本**：2.5.3
+Required environment includes:
+- **PyTorch Version**: 2.3.0+cu121
+- **torch_geometric Version**: 2.5.3
 
-## 库的安装方法
+## Library Installation
 
-使用以下命令来安装所需的库：
+Use the following commands to install the required libraries:
 
 ```bash
 pip install torch==2.3.0+cu121 -f https://download.pytorch.org/whl/cu121/torch_stable.html
 pip install torch_geometric==2.5.3 -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
 ```
 
-## 代码运行方法
+## Running the Code
 
-1. 在 `./Model/config.py` 文件里面设置配置参数。
+1. Set configuration parameters in the `./Model/config.py` file.
 
-2. 在项目的根目录下运行main.py：
+2. Run `main.py` in the root directory of the project:
 
 ```bash
 python main.py
 ```
 
-## 使用说明
+## Usage Instructions
 
-1. 在 `predict_mole_smi` 列表中输入你所感兴趣的化学分子的 SMILES 字符串（可自行由ChemDraw导出）：
+1. Input the SMILES strings of the chemical molecules you are interested in into the `predict_mole_smi` list (these can be exported from ChemDraw):
 
     ```python
     predict_mole_smi = ['CCCCCCC', 'CCCCCCCCCCCC', 'CCCCCCCCCCCCCCCCCCC']
     ```
 
-2. 在 `exp_cond` 列表里输入升温曲线的条件（初始温度、末态温度、升温速率、初始温度持续时间）：
+2. Input the conditions of the temperature ramping curve into the `exp_cond` list (initial temperature, final temperature, heating rate, initial temperature holding time):
 
     ```python
     exp_cond = [40, 200, 20, 2]
     ```
 
-3. 运行main.py即可预测出该化学分子在特定升温曲线下的保留时间：
+3. Run `main.py` to predict the retention time of the chemical molecule under the specified temperature ramping curve:
 
     ```bash
     python main.py
     ```
 
-4. 修改 `GNN.GNN_mode` 参数即可进行训练和测试：
+4. Modify the `GNN.GNN_mode` parameter to perform training and testing:
 
-    - **Train 模式**：
+    - **Train Mode**:
 
         ```python
         GNN.GNN_mode = 'Train'
@@ -59,7 +59,7 @@ python main.py
         GNN.Mode()
         ```
 
-    - **Test 模式**：
+    - **Test Mode**:
 
         ```python
         GNN.GNN_mode = 'Test'
@@ -67,7 +67,7 @@ python main.py
         GNN.Mode()
         ```
 
-    - **Pre 模式**：
+    - **Pre Mode**:
 
         ```python
         GNN.GNN_mode = 'Pre'
@@ -79,9 +79,9 @@ python main.py
         GNN.Mode()
         ```
 
-## 注意事项
+## Notes
 
-- 在运行代码之前，请确保在 `./Model/config.py` 文件中正确设置所有配置参数。
-- 确保安装的 PyTorch 和 torch_geometric 版本符合要求，否则可能会导致兼容性问题。
+- Before running the code, ensure all configuration parameters are correctly set in the `./Model/config.py` file.
+- Ensure that the installed versions of PyTorch and torch_geometric meet the requirements to avoid compatibility issues.
 
-通过这些步骤，你可以使用此多模态模型预测化学分子在特定升温曲线下的保留时间。
+By following these steps, you can use this multimodal model to predict the retention time of chemical molecules under specific temperature ramping curves.
