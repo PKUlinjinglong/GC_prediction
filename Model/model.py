@@ -10,7 +10,6 @@ import torch.nn as nn
 import copy
 from joblib import dump, load
 from sklearn.metrics import r2_score
-from compound_tools import *
 import os
 from mordred import Calculator, descriptors,is_missing
 import random
@@ -20,9 +19,11 @@ from sklearn.model_selection import train_test_split
 from torchsummary import summary
 from torch.utils.data import TensorDataset
 from sklearn.ensemble import RandomForestRegressor
-from .data_process import Dataset_process,q_loss
-from .GIN import GINGraphPooling
-from .config import parse_args
+
+from Model.compound_tools import *
+from Model.data_process import Dataset_process,q_loss
+from Model.GIN import GINGraphPooling
+from Model.config import parse_args
 
 seed = 1314
 torch.manual_seed(seed)

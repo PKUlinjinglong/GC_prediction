@@ -3,12 +3,11 @@ from torch_geometric.data import Data
 from rdkit.Chem import MACCSkeys
 from rdkit.Chem import AllChem, PandasTools, Descriptors
 import shutil
-from compound_tools import *
+from Model.compound_tools import *
 import os
 from mordred import Calculator, descriptors,is_missing
 import random
 from rdkit import Chem, DataStructs
-
 
 seed = 1314
 torch.manual_seed(seed)

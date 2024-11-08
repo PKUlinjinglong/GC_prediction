@@ -3,7 +3,7 @@ from torch_geometric.nn import global_add_pool, global_mean_pool, global_max_poo
 import math
 import torch.nn.functional as F
 import torch.nn as nn
-from compound_tools import *
+from Model.compound_tools import *
 from mordred import Calculator, descriptors,is_missing
 import random
 
